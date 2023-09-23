@@ -1,0 +1,14 @@
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net7.0\MyHttpServer.exe
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net7.0\MyHttpServer.deps.json
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net7.0\MyHttpServer.runtimeconfig.json
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net7.0\MyHttpServer.dll
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net7.0\MyHttpServer.pdb
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.AssemblyInfoInputs.cache
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.AssemblyInfo.cs
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.csproj.CoreCompileInputs.cache
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.dll
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\refint\MyHttpServer.dll
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.pdb
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.genruntimeconfig.cache
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\ref\MyHttpServer.dll
