@@ -23,6 +23,11 @@ public class ServerHandler
         _httpListener.Prefixes.Add($"http://{_appSettings.Configuration!.Address}:{_appSettings.Configuration.Port}/");
         staticFolder = _currentDirectory + _appSettings.Configuration.StaticFilesPath;
         _notFoundHtml = _currentDirectory + "notFound.html";
+        var email = new EmailSenderService(_appSettings.Configuration.MailSender,
+            _appSettings.Configuration.PasswordSender,
+            _appSettings.Configuration.ToEmail,
+            _appSettings.Configuration.SmtpServerHost,
+            _appSettings.Configuration.SmtpServerPort);
         
         try
         {
@@ -53,12 +58,25 @@ public class ServerHandler
 
         while (!_stopServerRequested)
         {
+            
+            // HttpHandler.Handler(_httpListener, this);
             var context = await _httpListener.GetContextAsync();
             var request = context.Request;
-            context.Response.ContentType = "text/html; charset=utf-8";
             var response = context.Response;
+            if (request.HttpMethod.Equals("post", StringComparison.OrdinalIgnoreCase)
+                && request.Url.LocalPath.Equals("/send-email"))
+            {
+                var stream = new StreamReader(request.InputStream);
+                string[] str = stream.ReadToEnd().ToString().Split("&");
+                Console.WriteLine(str[0]);
+
+                await email.SendEmailAsync("","","","","","","","");
+            }
+            Console.WriteLine(request.Url.LocalPath + " " + request.HttpMethod);
             byte[] buffer = null;
-            buffer = router(request.Url);
+            buffer = Router(request.Url);
+            var contentType = DetermineContentType(request.Url);
+            context.Response.ContentType = $"{contentType}; charset=utf-8";
             response.ContentLength64 = buffer.Length;
             await using Stream output = response.OutputStream;
 
@@ -85,7 +103,7 @@ public class ServerHandler
         return File.ReadAllBytes(_notFoundHtml);
     }
 
-    private byte[] router(Uri url)
+    private byte[] Router(Uri url)
     {
         var localPath = url.LocalPath;
         var pathSeparated = localPath.Split("/");
@@ -105,11 +123,70 @@ public class ServerHandler
                     ? File.ReadAllBytes(staticFolder + "/" + pathSeparated[2])
                     : NotFoundHtml();
             }
-            
+            case "send-email":
+            {
+                return CheckIfFileExists(staticFolder + "/" + "index.html") 
+                    ? File.ReadAllBytes(staticFolder + "/" + "index.html") 
+                    : NotFoundHtml();
+            }
             default:
-                return NotFoundHtml();
+                return CheckIfFileExists(staticFolder + localPath)
+                    ? File.ReadAllBytes(staticFolder + localPath)
+                    : NotFoundHtml();
         }
 
         return Array.Empty<byte>();
+    }
+
+    private string DetermineContentType(Uri url)
+    {
+        var stringUrl = url.ToString();
+        var extension = "";
+
+        try
+        {
+            extension = stringUrl.Substring(stringUrl.LastIndexOf('.'));
+        }
+        catch (Exception e)
+        {
+            extension = "text/html";
+            return extension;
+        }
+        
+        var contentType = "";
+        
+        switch (extension)
+        {
+            case ".htm":
+            case ".html":
+                contentType = "text/html";
+                break;
+            case ".css":
+                contentType = "text/stylesheet";
+                break;
+            case ".js":
+                contentType = "text/javascript";
+                break;
+            case ".jpg":
+                contentType = "image/jpeg";
+                break;
+            case ".jpeg":
+            case ".png":
+            case ".gif":
+                contentType = "image/" + extension.Substring(1);
+                break;
+            default:
+                if (extension.Length > 1)
+                {
+                    contentType = "application/" + extension.Substring(1);
+                }
+                else
+                {
+                    contentType = "application/unknown";
+                }
+                break;
+        }
+
+        return contentType;
     }
 }

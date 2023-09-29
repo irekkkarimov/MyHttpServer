@@ -9,16 +9,44 @@
 
 
 
-    <ItemGroup>
-      <Compile Remove="static\**" />
-    </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Remove="static\**" />
+      <Content Include="static\images\appstore_476166ec50.svg" />
+      <Content Include="static\images\copy-dodo.8b410ea.svg" />
+      <Content Include="static\images\details_arrow.png" />
+      <Content Include="static\images\dodo_pizza_footer.png" />
+      <Content Include="static\images\dodo_pizza_footer.svg" />
+      <Content Include="static\images\dodo_slideshow_screenshot.png" />
+      <Content Include="static\images\googleplay_271ed894bd.png" />
+      <Content Include="static\images\like1_f2e04214ac.png" />
+      <Content Include="static\images\like2_f8932643ba.png" />
+      <Content Include="static\images\like3_3aff907dbf.png" />
+      <Content Include="static\images\like4_119128e92f.png" />
+      <Content Include="static\images\like5_b734e34ece.png" />
+      <Content Include="static\images\like6_762bbc69bd.png" />
+      <Content Include="static\images\logo.png" />
+      <Content Include="static\images\logo_2.png" />
+      <Content Include="static\images\message_2x_a19d7f1375.png" />
+      <Content Include="static\images\pos2_5fa68f4d3e.png" />
+      <Content Include="static\images\pos3_dac3f8e2ff.png" />
+      <Content Include="static\images\pos4_305a98c676.png" />
+      <Content Include="static\images\preview_full.jpg" />
+      <Content Include="static\images\RU_Rabotavdodo_Video_Preview_1_2_85bd4f1997.jpeg" />
+      <Content Include="static\images\RU_Rabotavdodo_Video_Preview_2_2_2b09569789.jpg" />
+      <Content Include="static\images\RU_Rabotavdodo_Video_Preview_3_2_89a1a53c75.jpg" />
+      <Content Include="static\images\RU_Rabotavdodo_Video_Preview_4_2_b01d46f312.jpg" />
+      <Content Include="static\images\RU_Rabotavdodo_Video_Preview_5_2_0c2cab2dd5.jpg" />
+      <Content Include="static\images\slideshow_arrow.png" />
+      <Content Include="static\images\slogan_1784115660.svg" />
+      <Content Include="static\images\thumb_up_2x_9db44b36eb.png" />
+      <Content Include="static\images\vk_g_a505792c5c.svg" />
+      <Content Include="static\images\youtube_g_3930a841c3.svg" />
+      <Content Include="static\index.html" />
+      <Content Include="static\styles\styles.css" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="static\**" />
-    </ItemGroup>
+
+
+
 
 </Project>
