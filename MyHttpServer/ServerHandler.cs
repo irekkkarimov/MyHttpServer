@@ -1,4 +1,5 @@
 using System.Net;
+using System.Web;
 
 namespace MyHttpServer;
 
@@ -67,10 +68,13 @@ public class ServerHandler
                 && request.Url.LocalPath.Equals("/send-email"))
             {
                 var stream = new StreamReader(request.InputStream);
-                string[] str = stream.ReadToEnd().ToString().Split("&");
-                Console.WriteLine(str[0]);
+                var streamRead = stream.ReadToEnd();
+                string decodedData = HttpUtility.UrlDecode(streamRead, System.Text.Encoding.UTF8);
+                Console.WriteLine(decodedData);
+                string[] str = decodedData.Split("&");
 
-                await email.SendEmailAsync("","","","","","","","");
+                Console.WriteLine(str.Length);
+                await email.SendEmailAsync(str[0],str[1],str[2],str[4],str[5],str[6],str[7],str[8]);
             }
             Console.WriteLine(request.Url.LocalPath + " " + request.HttpMethod);
             byte[] buffer = null;

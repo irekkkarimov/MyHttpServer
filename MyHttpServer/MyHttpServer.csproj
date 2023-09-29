@@ -42,8 +42,11 @@
       <Content Include="static\images\vk_g_a505792c5c.svg" />
       <Content Include="static\images\youtube_g_3930a841c3.svg" />
       <Content Include="static\index.html" />
-      <Content Include="static\styles\styles.css" />
     </ItemGroup>
+
+
+
+
 
 
 
