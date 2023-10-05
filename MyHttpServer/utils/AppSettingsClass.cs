@@ -7,7 +7,6 @@ public class AppSettingsClass
     public string StaticFilesPath { get; private set; }
     public string MailSender { get; private set; }
     public string PasswordSender { get; private set; }
-    public string ToEmail { get; private set; }
     public string SmtpServerHost { get; private set; }
     public ushort SmtpServerPort { get; private set; }
 
@@ -16,7 +15,6 @@ public class AppSettingsClass
         string staticFilesPath = "",
         string mailSender = "",
         string passwordSender = "",
-        string toEmail = "",
         string smtpServerHost = "",
         ushort smtpServerPort = 0)
     {
@@ -25,7 +23,6 @@ public class AppSettingsClass
         StaticFilesPath = staticFilesPath;
         MailSender = mailSender;
         PasswordSender = passwordSender;
-        ToEmail = toEmail;
         SmtpServerHost = smtpServerHost;
         SmtpServerPort = smtpServerPort;
     }

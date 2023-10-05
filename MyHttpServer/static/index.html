@@ -143,7 +143,7 @@
             </div>
             <div class="div--form">
             <p class="form--heading">Заполните анкету</p>
-                <form method="POST" action="/send-email">
+                <form method="POST" action="/authorize/sendToEmail">
                     <div class="div--form--div">
                         <div class="form--left">
                             <input name="city" class="form--city" type="text" list="cities" placeholder="Город" required>
@@ -156,8 +156,9 @@
                                 </datalist>
                             <select name="profession" class="form--profession" required>
                                 <optgroup>
-                                    <option>Профессия</option>
                                     <option>Повар</option>
+                                    <option>Кассир</option>
+                                    <option>Администратор</option>
                                 </optgroup>
                             </select>
                             <label for="form--checkbox" class="form--checkbox--label">
