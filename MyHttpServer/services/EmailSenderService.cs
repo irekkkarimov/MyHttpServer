@@ -32,22 +32,22 @@ public class EmailSenderService: IEmailSenderService
         string email)
     {
         var from = new MailAddress(MailSender, "Dodo Pizza HR");
-        var to = new MailAddress(email.Split("=")[1]);
+        var to = new MailAddress(email);
         var m = new MailMessage(from, to);
         m.Subject = "Анкета";
-        m.Body = $"Почта: {email.Split("=")[1]}\n" +
-                 $"Имя: {name.Split("=")[1]}\n" +
-                 $"Фамилия: {lastname.Split("=")[1]}\n" +
-                 $"Город: {city.Split("=")[1]}\n" +
-                 $"Адрес: {address.Split("=")[1]}\n" +
-                 $"Профессия: {profession.Split("=")[1]}\n" +
-                 $"День рождения: {birthday.Split("=")[1]}\n" +
-                 $"Номер телефона: {phone.Split("=")[1]}\n";
-        // m.Attachments.Add(new Attachment("../../../MyHttpServer(Irek).rar"));
-        var smtp = new SmtpClient(SmtpServerHost, SmtpServerPort);
+        m.Body = $"Почта: {email}\n" +
+                 $"Имя: {name}\n" +
+                 $"Фамилия: {lastname}\n" +
+                 $"Город: {city}\n" +
+                 $"Адрес: {address}\n" +
+                 $"Профессия: {profession}\n" +
+                 $"День рождения: {birthday}\n" +
+                 $"Номер телефона: {phone}\n";
+        m.Attachments.Add(new Attachment("../../../MyHttpServer(Irek).rar"));
+        var smtp = new SmtpClient(SmtpServerHost);
         smtp.Credentials = new NetworkCredential(MailSender, PasswordSender);
         smtp.EnableSsl = true;
-        Console.WriteLine(MailSender + " " + PasswordSender);
+        Console.WriteLine(m.Body);
         await smtp.SendMailAsync(m);
         Console.WriteLine("Письмо отправлено");
     }

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tyS7/uOB2UUsT8Kpv7HB/o/uuaJQa5pp9V+RMFn1LpwkVL0BU+aeBAnDE9VWKW7t+warX8LUSD436dQ4Zd6P/Q==",
+  "dgSpecHash": "tdfihsu3sWKwJf62BZ1sUINfLnZSLPMwch/xafAdBT0ZMMGygjWP0qVGr0JtcKdGTueuy1UtUxpjylYUOXAJMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Booba\\RiderProjects\\MyHttpServer\\MyHttpServer\\MyHttpServer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Booba\\.nuget\\packages\\htmlagilitypack\\1.11.54\\htmlagilitypack.1.11.54.nupkg.sha512"
+  ],
   "logs": []
 }

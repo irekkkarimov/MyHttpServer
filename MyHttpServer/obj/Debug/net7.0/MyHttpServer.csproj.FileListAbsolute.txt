@@ -12,3 +12,6 @@ C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\refint\M
 C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.pdb
 C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.genruntimeconfig.cache
 C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\ref\MyHttpServer.dll
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net7.0\HtmlAgilityPack.dll
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.csproj.AssemblyReference.cache
+C:\Users\Booba\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net7.0\MyHttpServer.csproj.CopyComplete
